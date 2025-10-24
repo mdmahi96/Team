@@ -1,163 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Team List Form</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body { 
-      font-family: 'Poppins', sans-serif; 
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-      overflow: hidden;
-      margin: 20px auto;
-    }
-
-    .header {
-      background: linear-gradient(135deg, #4285F4 0%, #3367D6 100%);
-      color: white;
-      padding: 30px;
-      text-align: center;
-    }
-
-    .header h1 {
-      font-size: 28px;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-
-    .header p {
-      font-size: 14px;
-      opacity: 0.9;
-    }
-
-    .iframe-container {
-      width: 100%;
-      position: relative;
-      background: #f8f9fa;
-      min-height: 1200px;
-    }
-
-    iframe {
-      width: 100%;
-      height: 1900px;
-      border: none;
-      display: block;
-      background: white;
-    }
-
-    .loading {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: #666;
-    }
-
-    .spinner {
-      border: 4px solid #f3f3f3;
-      border-top: 4px solid #4285F4;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      animation: spin 1s linear infinite;
-      margin: 0 auto 20px;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    .footer {
-      text-align: center;
-      padding: 20px;
-      color: white;
-      font-size: 14px;
-      opacity: 0.8;
-    }
-
-    @media (max-width: 768px) {
-      body {
-        padding: 10px;
-      }
-
-      .header h1 {
-        font-size: 22px;
-      }
-
-      .container {
-        border-radius: 10px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0;url=https://script.google.com/macros/s/AKfycbyPoDQuwkl9AW3lDFNic4I5UTNBKALAeFyBS5ayWXKZKP6AjJfCMieeDwHP1Xv1gh8ubg/exec">
+    <title>Redirecting to Team Builder...</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+            margin: 0;
+        }
+        .loader {
+            text-align: center;
+            color: white;
+        }
+        .spinner {
+            border: 4px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top: 4px solid white;
+            width: 50px;
+            height: 50px;
+            animation: spin 0.3s linear infinite;
+            margin: 0 auto 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <h1></h1>
-      <p></p>
-    </div>
-    
-    <div class="iframe-container">
-      <div class="loading" id="loading">
+    <div class="loader">
         <div class="spinner"></div>
-        <p>Loading form...</p>
-      </div>
-      <iframe 
-        id="teamForm"
-        src="https://script.google.com/macros/s/AKfycbyPoDQuwkl9AW3lDFNic4I5UTNBKALAeFyBS5ayWXKZKP6AjJfCMieeDwHP1Xv1gh8ubg/exec"
-        title="Team Registration Form"
-        onload="document.getElementById('loading').style.display='none';"
-      ></iframe>
+        <h2>Redirecting to Team Builder...</h2>
+        <p>If you're not redirected, <a href="https://script.google.com/macros/s/AKfycbyPoDQuwkl9AW3lDFNic4I5UTNBKALAeFyBS5ayWXKZKP6AjJfCMieeDwHP1Xv1gh8ubg/exec" style="color: white;">click here</a></p>
     </div>
-  </div>
-
-  <div class="footer">
-    <p>&copy; 2025 Team Management System @Mahi </p>
-  </div>
-
-  <script>
-    // Hide loading indicator after iframe loads
-    const iframe = document.getElementById('teamForm');
-    const loading = document.getElementById('loading');
-
-    iframe.addEventListener('load', function() {
-      loading.style.display = 'none';
-    });
-
-    // Fallback: hide loading after 5 seconds even if load event doesn't fire
-    setTimeout(function() {
-      loading.style.display = 'none';
-    }, 5000);
-
-    // Handle iframe errors
-    iframe.addEventListener('error', function() {
-      loading.innerHTML = '<p style="color: #e74c3c;">Error loading form. Please refresh the page.</p>';
-    });
-  </script>
 </body>
 </html>
